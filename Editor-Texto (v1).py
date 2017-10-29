@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 from universe import *
 
-
-"testessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
 "========Developers: Jeferson e Edgar=========="
 
 '''========================================EDITOR-DE-TEXTO-AVANÇADO(Versão 1.0)======================================'''
