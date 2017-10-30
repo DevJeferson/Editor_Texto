@@ -10,13 +10,12 @@ from universe import *
 
 #Preparação da TELA:
 '_________________________________________________'
-(LARGURA, ALTURA) = (1080, 600)                 '|'
-TELA = pg.display.set_mode((LARGURA, ALTURA))   '|'
+(LARGURA, ALTURA) = (1080, 600)
+TELA = pg.display.set_mode((LARGURA, ALTURA))
 CENTRO_X = LARGURA / 2;                         '|'
 CENTRO_Y = ALTURA / 2;                          '|'
-                                                '|'
-print(CENTRO_Y)                                 '|'
-'________________________________________________|'
+
+print(CENTRO_Y)
 
 
 '''=============================================Inicio das definições de dados======================================='''
@@ -79,16 +78,14 @@ def desenha_lista(lista):
             escrita += itens
 
 
-            if itens == '\r':
+            #if itens == '\r':
 
-                texto = fonte.render(escrita, 1, (0, 0, 0))
-            else:
-                texto = fonte.render("", 1, (255, 0, 0))
+            #    texto = fonte.render(escrita, 1, (0, 0, 0))
+            #else:
+             #   texto = fonte.render("", 1, (255, 0, 0))
 
-            TELA.blit(texto, (0, alinhamento))
-            alinhamento += 40
-
-
+            #TELA.blit(texto, (0, alinhamento))
+            #alinhamento += 40
 
 
         texto = fonte.render (escrita, 1, (0, 0, 0))
@@ -166,9 +163,12 @@ def trata_lista(lista,tecla):
     if tecla == pg.K_SPACE:
         lista.append(" ")
         return lista
-    if tecla == pg.K_BACKSPACE[-1]:
+
+    if tecla == pg.K_BACKSPACE:
         lista.pop()
         return lista
+
+
     #if tecla == pg.K_TAB:
      #   return texto+""""""
 
