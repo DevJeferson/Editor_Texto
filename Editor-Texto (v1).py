@@ -17,7 +17,6 @@ CENTRO_Y = ALTURA / 2;                          '|'
 
 print(CENTRO_Y)
 
-
 '''=============================================Inicio das definições de dados======================================='''
 
 '''
@@ -63,9 +62,7 @@ def desenha_texto(texto):
     #TELA.blit(texto, (0, CENTRO_Y -30))
     TELA.blit(texto,(0,10))
 
-
 "===================================================DESENHA LISTA======================================================"
-
 
 
 def desenha_lista(lista):
@@ -76,58 +73,35 @@ def desenha_lista(lista):
         escrita = ""
         for itens in lista:
             escrita += itens
+<<<<<<< HEAD
             if itens == '\r':
                 texto = fonte.render(escrita, 1, (0, 0, 0))
             else:
                 texto = fonte.render("", 1, (255, 0, 0))
                 TELA.blit(texto, (0, alinhamento))
                 alinhamento += 40
+=======
 
+            #if itens == '\r':
+
+            #    texto = fonte.render(escrita, 1, (0, 0, 0))
+            #else:
+             #   texto = fonte.render("", 1, (255, 0, 0))
+
+            #TELA.blit(texto, (0, alinhamento))
+            #alinhamento += 40
+>>>>>>> master
 
         texto = fonte.render (escrita, 1, (0, 0, 0))
     else:
         texto = fonte.render("", 1, (255, 0, 0))
 
-
-
-
-    # blit: String, (Int, Int)
-    #TELA.blit(texto, (0, CENTRO_Y -30))
-
     TELA.blit(texto,(0,alinhamento))
     alinhamento += 40
 
 
-    #TELA.blit(texto,(0,10))
-
-#CRIAR O QUEBRA LINHA
-
-
-
-
-
-#QUEBRA DE LINHAS AUTOMATICO
-
-
-#while
-
-
-
-
-
-
-
-
-
 
 '-----------Definições dos Botoes---------'
-
-
-
-
-
-
-
 
 
 
@@ -149,8 +123,6 @@ def trata_tecla(texto, tecla):
 
     else:
         return texto+chr(tecla)
-
-
 
 
 #LISTAS
