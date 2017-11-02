@@ -64,23 +64,25 @@ def desenha_texto(texto):
 
 "===================================================DESENHA LISTA======================================================"
 
-
 def desenha_lista(lista):
     fonte = pg.font.SysFont("times new roman", 30)
-
     alinhamento = 10
     if len(lista) != 0:
         escrita = ""
         for itens in lista:
-            escrita += itens
-<<<<<<< HEAD
-            if itens == '\r':
+            if itens == '\r':            #----------------> QUEBRA DE LINHA MANUAL
+                escrita = ""
                 texto = fonte.render(escrita, 1, (0, 0, 0))
-            else:
-                texto = fonte.render("", 1, (255, 0, 0))
                 TELA.blit(texto, (0, alinhamento))
                 alinhamento += 40
-=======
+            escrita += itens
+
+
+
+            #else:
+             #   texto = fonte.render("", 1, (255, 0, 0))
+
+
 
             #if itens == '\r':
 
@@ -90,8 +92,6 @@ def desenha_lista(lista):
 
             #TELA.blit(texto, (0, alinhamento))
             #alinhamento += 40
->>>>>>> master
-
         texto = fonte.render (escrita, 1, (0, 0, 0))
     else:
         texto = fonte.render("", 1, (255, 0, 0))
