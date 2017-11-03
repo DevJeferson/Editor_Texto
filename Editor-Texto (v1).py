@@ -43,6 +43,23 @@ LISTA_2 = ["teste",""]
 LISTA_1_DEPOIS_DO_ENTER = ["Jefer", ""]
 DIGITEI_A = ["Jefer", "A"]
 
+
+
+!
+#Intervalo: inicio, fim
+#texto = lista ,...
+#lista = lista de intervalos
+
+def intervalos
+
+
+
+
+
+
+
+
+
 '''============================================Fim das definições de dados==========================================='''
 
 
@@ -64,40 +81,33 @@ def desenha_texto(texto):
 
 "===================================================DESENHA LISTA======================================================"
 
+#OBS: CADA LINHA E UMA STRING
+
+#def desenha_lista(linha):
+
+
 def desenha_lista(lista):
     fonte = pg.font.SysFont("times new roman", 30)
     alinhamento = 10
     if len(lista) != 0:
         escrita = ""
+        #cont = 0
         for itens in lista:
-            if itens == '\r':            #----------------> QUEBRA DE LINHA MANUAL
-                escrita = ""
-                texto = fonte.render(escrita, 1, (0, 0, 0))
-                TELA.blit(texto, (0, alinhamento))
-                alinhamento += 40
+            escrita = ""
+            texto = fonte.render(itens, 1, (0, 0, 0))
+            TELA.blit(texto, (0, alinhamento))
+            alinhamento += 40
             escrita += itens
 
 
+           # if itens > LARGURA:
+            #    itens == '\r'
 
-            #else:
-             #   texto = fonte.render("", 1, (255, 0, 0))
-
-
-
-            #if itens == '\r':
-
-            #    texto = fonte.render(escrita, 1, (0, 0, 0))
-            #else:
-             #   texto = fonte.render("", 1, (255, 0, 0))
-
-            #TELA.blit(texto, (0, alinhamento))
-            #alinhamento += 40
-        texto = fonte.render (escrita, 1, (0, 0, 0))
-    else:
-        texto = fonte.render("", 1, (255, 0, 0))
-
-    TELA.blit(texto,(0,alinhamento))
-    alinhamento += 40
+     #   texto = fonte.render (escrita, 1, (0, 0, 0))
+    #else:`
+     #   texto = fonte.render("", 1, (255, 0, 0))
+    #TELA.blit(texto,(0,alinhamento))
+    #alinhamento += 40
 
 
 
@@ -128,24 +138,39 @@ def trata_tecla(texto, tecla):
 #LISTAS
 
 def trata_lista(lista,tecla):
-    if tecla == pg.K_SPACE:
-        lista.append(" ")
-        return lista
+    #if tecla == pg.K_SPACE:
+     #   lista.append(" ")
+      #  return lista
+
+
+
+
+
+
 
     if tecla == pg.K_BACKSPACE:
-        lista.pop()
+        ultima_linha = lista[-1]
+        ultima_linha = ultima_linha[0:-1]
+        lista[-1] = ultima_linha
         return lista
-
-
-    #if tecla == pg.K_TAB:
-     #   return texto+""""""
-
-    #if tecla == pg.K_RETURN:
-     #   return texto + "\r"
+    elif tecla == pg.K_RETURN:
+        nova_linha = ""
+        lista.append(nova_linha)
+        return lista
 
     else:
-        lista.append(chr(tecla))
+        ultima_linha = lista[-1]
+        if len(ultima_linha) > 80:
+            nova_linha = ""
+            lista.append(nova_linha)
+        ultima_linha = lista[-1]
+        ultima_linha = ultima_linha +(chr(tecla))
+        lista[-1] = ultima_linha
         return lista
+
+
+
+
 
 "===========================================BIG-BANG============================="
 '''EstadoMundo: Texto -> Texto'''
