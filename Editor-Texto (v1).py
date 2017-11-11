@@ -1,39 +1,43 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from universe import *
+'''________________________________________EDITOR-DE-TEXTO-AVANÇADO(Versão 1.0)______________________________________'''
 
-'''========================================EDITOR-DE-TEXTO-AVANÇADO(Versão 1.0)======================================'''
-
-'''=========================================Preparacao da Tela e Constantes:======================================== '''
-
-#Preparação da TELA:
-'_________________________________________________'
+'''=====================================================TELA E CONSTANTES=========================================== '''
+"========>Preparacao da Tela e das Constantes<========"
 (LARGURA, ALTURA) = (1080, 600)
 TELA = pg.display.set_mode((LARGURA, ALTURA))
 CENTRO_X = LARGURA / 2;
 CENTRO_Y = ALTURA / 2;
-
 print(CENTRO_Y)
-'-------------------------------------------------'
 
-'''=============================================Inicio das definições de dados======================================='''
+'''==============================================DEFINICOES DE DADOS================================================='''
+"-------Dado Principal------"
+#Editor_texto = namedtuple("texto,selecao...")
+
+'''Editor_texto e criado como: Editor_texto(Texto,selecao,........)
+Interp. Um Editor_Texto é composto por um Texto,... 
+'''
+"====Exemplos==="
+
+
+
+"===Template==="
+
+
+
+"---------Dados Segundarios--------"
 
 '''
 O Texto é uma lista de Strings, ou seja é uma lista de palavras
 interp. representa o que o usuario digita no teclado
 '''
+"===Exemplos==="
 
-'''
--------------------------Exemplos----------------------:
-'''
-TEXTO_INICIAL = ""
-TEXTO_1= "Hello World"
-TEXTO_2= "Bah Tche"
-#================
-LISTA_INICIAL = [""]
-LISTA_1 = ["Jefer"]
-LISTA_2 = ["teste",""]
-LISTA_1_DEPOIS_DO_ENTER = ["Jefer", ""]
+TEXTO_INICIAL = [""]
+TEXTO_1= ["Hello World"]
+TEXTO_2 = ["teste", ""]
+TEXTO_1_DEPOIS_DO_ENTER = ["Jefer", ""]
 DIGITEI_A = ["Jefer", "A"]
 
 '''====Template===:
@@ -41,58 +45,58 @@ def fn_para_texto(t):
     ... t    #faz algo com t
 '''
 
-'''
-O intervalo tera um inicio e um fim, alem de ter uma posicao no eixo x e y
-Interp. representa um intervalo
-obs: lista = lista de intervalos
-'''
 
 '''
-=============Template===========
-def intervalos(lista_intervalos):
-    len(lista_intervalos)
-    ...
+A selecao e uma representacao do inicio e final de uma linha e coluna 
+Interp. selecao representara o inicio e o final da selecao de um texto
+'''
+"====Exemplos==="
+
+
+
+
+"===Template==="
+'''
+def selecao(Inicial,Final):
+    ....
 '''
 
-'''============================================Fim das definições de dados==========================================='''
+
+'''=================================================================================================================='''
 
 
-'''=================================================Inicio das funções==============================================='''
+'''======================================================FUNCOES====================================================='''
 
-
-"===================================================DESENHA TEXTO======================================================"
+"===================================================DESENHA EDITOR======================================================"
 '''desenha_texto: Texto -> Imagem
 interp. recebe uma string, e desenha ela na tela'''
 
-def desenha_texto(texto):
+def desenha_editor(texto):
     fonte = pg.font.SysFont("times new roman", 30)
     if texto !="":
         texto = fonte.render(str(texto), 1, (0, 0, 0))
     else:
-        texto = fonte.render("", 1, (255, 0, 0))
+       texto = fonte.render("", 1, (255, 0, 0))
     TELA.blit(texto,(0,10))
-"===================================================DESENHA LISTA======================================================"
+
+"===================================================DESENHA TEXTO======================================================"
 '''
-desenha lista representa as definicoes necessarias para que haja uma lista
+desenha texto representa as definicoes necessarias para que haja um texto 
 Interp.
 obs: Cada linha e uma string
 '''
-
-def desenha_lista(lista):
+def desenha_texto(texto):
     fonte = pg.font.SysFont("times new roman", 30)
     alinhamento = 10
-    if len(lista) != 0:
+    if len(texto) != 0:
         escrita = ""
         #cont = 0
-        for itens in lista:
+        for itens in texto:
             escrita = ""
             texto = fonte.render(itens, 1, (0, 0, 0))
             TELA.blit(texto, (0, alinhamento))
             alinhamento += 40
             escrita += itens
-
-'-----------Definições dos Botoes---------'
-
 
 '''======================================================TRATA_TECLA================================================='''
 '''trata_tecla: Texto, tecla -> Texto
@@ -112,60 +116,47 @@ def trata_tecla(texto, tecla):
     else:
         return texto+chr(tecla)
 
-"===========================TRATA MOUSE========================="
-def trata_mouse(gato, x, y, ev):
-    if ev == pg.MOUSEBUTTONDOWN:
-        return x
-    else:
-        return gato
-
-
-
 '''
-=======================TRATA_LISTA====================
+=======================TRATA_TEXTO====================
 '''
 
-def trata_lista(lista,tecla):
+def trata_texto(texto,tecla):
     "----------Tecla apagar-----------"
     if tecla == pg.K_BACKSPACE:
-        ultima_linha = lista[-1]
+        ultima_linha = texto[-1]
         ultima_linha = ultima_linha[0:-1]
-        lista[-1] = ultima_linha
-        return lista
+        texto[-1] = ultima_linha
+        return texto
     #"----------Tecla Enter-----------"
     elif tecla == pg.K_RETURN:
         nova_linha = ""
-        lista.append(nova_linha)
-        return lista
+        texto.append(nova_linha)
+        return texto
     #"----Quebra de Linha Automatico----"
     else:
-        ultima_linha = lista[-1]
+        ultima_linha = texto[-1]
         if len(ultima_linha) > 80:
             nova_linha = ""
-            lista.append(nova_linha)
-        ultima_linha = lista[-1]
+            texto.append(nova_linha)
+        ultima_linha = texto[-1]
         ultima_linha = ultima_linha +(chr(tecla))
-        lista[-1] = ultima_linha
-        return lista
+        texto[-1] = ultima_linha
+        return texto
+
+"================SELECAO================"
+#Inicial = (int,int)
+#Final = (int,int)
+#def selecao(Inicial, Final):
 
 
-
-
-#MOUSE
-    #if tecla ==  pg.mouse.get_pos():
-     #   len(pg.mouse.get.pos)
-
-
-   # if tecla == pg.MOUSEBUTTONDOWN:
 
 "===========================================BIG-BANG============================="
 '''EstadoMundo: Texto -> Texto'''
 def main(texto):
     big_bang(texto, \
              tela=TELA, \
-             desenhar=desenha_lista, \
-             quando_tecla=trata_lista, \
-             quando_mouse=trata_mouse, \
+             desenhar=desenha_texto, \
+             quando_tecla=trata_texto, \
              )
 
-main(LISTA_INICIAL)
+main(TEXTO_INICIAL)
