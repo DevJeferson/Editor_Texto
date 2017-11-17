@@ -1,64 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-from universe import *
-'''________________________________________EDITOR-DE-TEXTO-AVANÇADO(Versão 1.0)______________________________________'''
-
-'''=====================================================TELA E CONSTANTES=========================================== '''
-"========>Preparacao da Tela e das Constantes<========"
-(LARGURA, ALTURA) = (1080, 600)
-TELA = pg.display.set_mode((LARGURA, ALTURA))
-CENTRO_X = LARGURA / 2;
-CENTRO_Y = ALTURA / 2;
-print(CENTRO_Y)
-
-'''==============================================DEFINICOES DE DADOS================================================='''
-"-------Dado Principal------"
-#Editor_texto = namedtuple("texto,selecao...")
-
-'''Editor_texto e criado como: Editor_texto(Texto,selecao,........)
-Interp. Um Editor_Texto é composto por um Texto,... 
-'''
-"====Exemplos==="
-"===Template==="
-
-
-"---------Dados Segundarios--------"
-'''
-O Texto é uma lista de Strings, ou seja é uma lista de palavras
-interp. representa o que o usuario digita no teclado
-'''
-"===Exemplos==="
-
-TEXTO_INICIAL = [""]
-TEXTO_1= ["Hello World"]
-TEXTO_2 = ["teste", ""]
-TEXTO_1_DEPOIS_DO_ENTER = ["Jefer", ""]
-DIGITEI_A = ["Jefer", "A"]
-
-'''====Template===:
-def fn_para_texto(t):
-    ... t    #faz algo com t
-'''
-
-'''
-A selecao e uma representacao do inicio e final de uma linha e coluna 
-Interp. selecao representara o inicio e o final da selecao de um texto
-'''
-"====Exemplos==="
-# SELECAO_INICIAL = [0,2][0,4]
-# SELECAO_MAIOR = [2,3][2,15]
-# SELECAO_DUAS_LINHAS = [1,4][2,12]
-# SELECAO_TUDO = [0,0][15,30]
-
-"===Template==="
-'''
-def selecao(Inicial,Final):
-    ....
-'''
-
-
-'''=================================================================================================================='''
-
+from dados_editor_texto import *
 
 '''======================================================FUNCOES====================================================='''
 
@@ -149,13 +89,3 @@ def trata_texto(texto,tecla):
 
 
 
-"===========================================BIG-BANG============================="
-'''EstadoMundo: Texto -> Texto'''
-def main(texto):
-    big_bang(texto, \
-             tela=TELA, \
-             desenhar=desenha_texto, \
-             quando_tecla=trata_texto, \
-             )
-
-main(TEXTO_INICIAL)
