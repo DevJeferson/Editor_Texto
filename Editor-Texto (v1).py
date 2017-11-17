@@ -21,9 +21,7 @@ Interp. Um Editor_Texto é composto por um Texto,...
 "====Exemplos==="
 
 
-
 "===Template==="
-
 
 
 "---------Dados Segundarios--------"
@@ -45,14 +43,11 @@ def fn_para_texto(t):
     ... t    #faz algo com t
 '''
 
-
 '''
 A selecao e uma representacao do inicio e final de uma linha e coluna 
 Interp. selecao representara o inicio e o final da selecao de um texto
 '''
 "====Exemplos==="
-
-
 
 
 "===Template==="
@@ -68,16 +63,16 @@ def selecao(Inicial,Final):
 '''======================================================FUNCOES====================================================='''
 
 "===================================================DESENHA EDITOR======================================================"
-'''desenha_texto: Texto -> Imagem
+'''desenha_editor: Texto -> Imagem
 interp. recebe uma string, e desenha ela na tela'''
 
-def desenha_editor(texto):
-    fonte = pg.font.SysFont("times new roman", 30)
-    if texto !="":
-        texto = fonte.render(str(texto), 1, (0, 0, 0))
-    else:
-       texto = fonte.render("", 1, (255, 0, 0))
-    TELA.blit(texto,(0,10))
+# def desenha_editor(texto):
+#     fonte = pg.font.SysFont("times new roman", 30)
+#     if texto !="":
+#         texto = fonte.render(str(texto), 1, (0, 0, 0))
+#     else:
+#         texto = fonte.render(1, (255, 0, 0))
+#     TELA.blit(texto,(0,10))
 
 "===================================================DESENHA TEXTO======================================================"
 '''
@@ -126,11 +121,16 @@ def trata_texto(texto,tecla):
         ultima_linha = texto[-1]
         ultima_linha = ultima_linha[0:-1]
         texto[-1] = ultima_linha
+     #--------APAGAR LINHA ANTERIOR------
+        if ultima_linha == [""]:
+            
+
         return texto
+
     #"----------Tecla Enter-----------"
     elif tecla == pg.K_RETURN:
         nova_linha = ""
-        texto.append(nova_linha)
+        texto.append(nova_linha)    #funcao append significa acresentar
         return texto
     #"----Quebra de Linha Automatico----"
     else:
