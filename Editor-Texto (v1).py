@@ -120,11 +120,11 @@ def trata_texto(texto,tecla):
     if tecla == pg.K_BACKSPACE:
         ultima_linha = texto[-1]
         ultima_linha = ultima_linha[0:-1]
-        texto[-1] = ultima_linha
-     #--------APAGAR LINHA ANTERIOR------
+        # --------APAGAR LINHA ANTERIOR------
         if ultima_linha == [""]:
-            
-
+            texto.pop()
+        else:
+            texto[-1] = ultima_linha
         return texto
 
     #"----------Tecla Enter-----------"
