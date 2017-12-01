@@ -1,5 +1,6 @@
+#from constantes_editor_texto import *
 from funcoes_editor_texto import *
-"===========================================BIG-BANG============================="
+"====================================================BIG-BANG=========================================================="
 '''EstadoMundo: Texto -> Texto'''
 def main(texto):
     big_bang(texto, \

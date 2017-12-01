@@ -1,8 +1,7 @@
 from dados_editor_texto import *
-
 '''======================================================FUNCOES====================================================='''
 
-"===================================================DESENHA EDITOR======================================================"
+"-----------------------------------------------------DESENHA_EDITOR---------------------------------------------------"
 '''desenha_editor: Texto -> Imagem
 interp. recebe uma string, e desenha ela na tela'''
 
@@ -14,7 +13,7 @@ interp. recebe uma string, e desenha ela na tela'''
 #         texto = fonte.render(1, (255, 0, 0))
 #     TELA.blit(texto,(0,10))
 
-"===================================================DESENHA TEXTO======================================================"
+"---------------------------------------------------DESENHA_TEXTO------------------------------------------------------"
 '''
 desenha texto representa as definicoes necessarias para que haja um texto 
 Interp.
@@ -33,7 +32,7 @@ def desenha_texto(texto):
             alinhamento += 40
             escrita += itens
 
-'''======================================================TRATA_TECLA================================================='''
+"-------------------------------------------------------TRATA_TECLA----------------------------------------------------"
 '''trata_tecla: Texto, tecla -> Texto
 interp. recebe o Texto atual, e a tecla nova que foi digitada,
 se nao for Espaço ou BackSpace, ela é adicionada no Texto'''
@@ -52,8 +51,9 @@ def trata_tecla(texto, tecla):
         return texto+chr(tecla)
 
 '''
-=======================TRATA_TEXTO====================
+"-------------------------------------------------------TRATA_TEXTO----------------------------------------------------"
 '''
+cursor_color = (0, 0, 1),
 def trata_texto(texto,tecla):
     "----------Tecla apagar-----------"
     if tecla == pg.K_BACKSPACE:
@@ -82,10 +82,34 @@ def trata_texto(texto,tecla):
         texto[-1] = ultima_linha
         return texto
 
+
+"-------TRATA-CURSOR----"
+#pg.mouse.set_cursor(*pg.cursors.diamond)
+#cursor = pg.cursors.compile(pg.cursors.textmarker_strings)
+
+def trata_cursor(lin,col,tecla,texto):
+    #'DIREITA'
+    if tecla == pg.K_RIGHT:
+
+
+    if tecla == pg.K_LEFT:
+
+
+    if tecla == pg.K_UP:
+
+
+    if tecla == pg.K_DOWN:
+
+
+
+
+
+
 "================SELECAO================"
 #Inicial = (int,int)
 #Final = (int,int)
 #def selecao(Inicial, Final):
 
-
+#def selecao(Inicial,Final):
+ #   if tecla == pg.K_RSHIFT or pg.K_LSHIFT:
 

@@ -5,12 +5,14 @@ from universe import *
 
 '''=====================================================TELA E CONSTANTES=========================================== '''
 "========>Preparacao da Tela e das Constantes<========"
-(LARGURA, ALTURA) = (1080, 600)
+(LARGURA, ALTURA) = (1009, 507)
 TELA = pg.display.set_mode((LARGURA, ALTURA))
 CENTRO_X = LARGURA / 2;
 CENTRO_Y = ALTURA / 2;
 print(CENTRO_Y)
 
+ImagemFundo = pg.image.load('2.png')
+TELA.blit(ImagemFundo,(0,0))
 '''==============================================DEFINICOES DE DADOS================================================='''
 "-------Dado Principal------"
 #Editor_texto = namedtuple("texto,selecao...")
