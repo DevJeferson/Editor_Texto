@@ -1,1 +1,0 @@
-Editor_Texto
