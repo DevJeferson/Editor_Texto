@@ -5,8 +5,8 @@ from funcoes_editor_texto import *
 def main(texto):
     big_bang(texto, \
              tela=TELA, \
-             desenhar=desenha_texto, \
-             quando_tecla=trata_texto, \
+             desenhar=desenha_editor_texto, \
+             quando_tecla=trata_editor_texto, \
              )
 
-main(TEXTO_INICIAL)
+main(EDITOR_TEXTO_INICIAL)

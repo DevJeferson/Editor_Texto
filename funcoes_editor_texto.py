@@ -1,22 +1,11 @@
 from dados_editor_texto import *
+
 '''======================================================FUNCOES====================================================='''
-
-"-----------------------------------------------------DESENHA_EDITOR---------------------------------------------------"
-'''desenha_editor: Texto -> Imagem
-interp. recebe uma string, e desenha ela na tela'''
-
-# def desenha_editor(texto):
-#     fonte = pg.font.SysFont("times new roman", 30)
-#     if texto !="":
-#         texto = fonte.render(str(texto), 1, (0, 0, 0))
-#     else:
-#         texto = fonte.render(1, (255, 0, 0))
-#     TELA.blit(texto,(0,10))
 
 "---------------------------------------------------DESENHA_TEXTO------------------------------------------------------"
 '''
 desenha texto representa as definicoes necessarias para que haja um texto 
-Interp.
+Interp. 
 obs: Cada linha e uma string
 '''
 def desenha_texto(texto):
@@ -32,28 +21,44 @@ def desenha_texto(texto):
             alinhamento += 40
             escrita += itens
 
+"desenha_editor_texto: Editor_texto -> Editor_texto" \
+"A funcao que desenha o texto"
+"(NOVO)--->DESENHA EDITOR TEXTO"
+def desenha_editor_texto(Editor_texto):
+    desenha_texto(Editor_texto.texto)
+
+
+
+
+
+
+
+
+
+
+
+
 "-------------------------------------------------------TRATA_TECLA----------------------------------------------------"
 '''trata_tecla: Texto, tecla -> Texto
 interp. recebe o Texto atual, e a tecla nova que foi digitada,
 se nao for Espaço ou BackSpace, ela é adicionada no Texto'''
 
 "----------------Trata_tecla------------"
-def trata_tecla(texto, tecla):
-    if tecla == pg.K_SPACE:
-        return texto+" "
-    if tecla == pg.K_BACKSPACE:
-        return texto[:-1]
-    if tecla == pg.K_TAB:
-        return texto+""""""
-    if tecla == pg.K_RETURN:
-        return texto + "\n"
-    else:
-        return texto+chr(tecla)
-
+# def trata_tecla(texto, tecla):
+#     if tecla == pg.K_SPACE:
+#         return texto+" "
+#     if tecla == pg.K_BACKSPACE:
+#         return texto[:-1]
+#     if tecla == pg.K_TAB:
+#         return texto+""""""
+#     if tecla == pg.K_RETURN:
+#         return texto + "\n"
+#     else:
+#         return texto+chr(tecla)
 '''
+
 "-------------------------------------------------------TRATA_TEXTO----------------------------------------------------"
 '''
-cursor_color = (0, 0, 1),
 def trata_texto(texto,tecla):
     "----------Tecla apagar-----------"
     if tecla == pg.K_BACKSPACE:
@@ -82,34 +87,30 @@ def trata_texto(texto,tecla):
         texto[-1] = ultima_linha
         return texto
 
-
 "-------TRATA-CURSOR----"
-#pg.mouse.set_cursor(*pg.cursors.diamond)
-#cursor = pg.cursors.compile(pg.cursors.textmarker_strings)
-
-def trata_cursor(lin,col,tecla,texto):
     #'DIREITA'
-    if tecla == pg.K_RIGHT:
+
+    #if tecla == pg.K_RIGHT:
 
 
-    if tecla == pg.K_LEFT:
+    #if tecla == pg.K_LEFT:
 
 
-    if tecla == pg.K_UP:
+    #if tecla == pg.K_UP:
 
 
-    if tecla == pg.K_DOWN:
+   # if tecla == pg.K_DOWN:
+
+'''
+trata_editor_texto : Editor_texto, EventoTecla -> Editor_texto
+
+'''
+def trata_editor_texto(Editor_texto,tecla):
+    Editor_texto.texto = trata_texto(Editor_texto.texto,tecla)
+    return Editor_texto
 
 
 
 
 
-
-"================SELECAO================"
-#Inicial = (int,int)
-#Final = (int,int)
-#def selecao(Inicial, Final):
-
-#def selecao(Inicial,Final):
- #   if tecla == pg.K_RSHIFT or pg.K_LSHIFT:
 
