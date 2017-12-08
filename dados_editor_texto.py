@@ -6,7 +6,7 @@ expressas auxiliam para entender como funcionara cada dado do programa
 '''
 "-----------------------------------------------------EDITOR_TEXTO-----------------------------------------------------"
 from namedlist import namedlist
-Editor_texto = namedlist("Editor_texto","texto")  #estrutura do editor
+Editor_texto = namedlist("Editor_texto","texto")  #estrutura principal do editor
 
 '''Editor_texto pode ser criado como: Editor_texto(Texto)
 Interp.: Um Editor_Texto é composto por um Editor_texto que eh um dado que contem as funcoes e dados necessarios
@@ -39,7 +39,6 @@ DIGITEI_A = ["Jefer", "A"]
 def fn_para_texto(t):
     ... t    #faz algo com t
 '''
-
 
 '''
 Para que haja as opcoes de trocar a fonte e o tamanho do texto digitado temos que ter um dado que saiba a posicao

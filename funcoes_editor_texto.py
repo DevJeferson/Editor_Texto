@@ -29,8 +29,7 @@ Interp. a funcao desenha_editor_texto recebe todos os parametros definidos na fu
 
 '''
 def desenha_editor_texto(Editor_texto):
-    desenha_texto(Editor_texto.texto)
-
+    desenha_texto(Editor_texto.texto)  #fnc
 
 "-------------------------------------------------------TRATA_TEXTO----------------------------------------------------"
 '''trata_texto: Texto, tecla -> Texto
@@ -79,7 +78,7 @@ trata_editor_texto : Editor_texto, EventoTecla -> Editor_texto
 Interp. a funcao trata_editor_texto recebe todos os trata_texto e retorna o Editor_texto
 '''
 def trata_editor_texto(Editor_texto,tecla):
-    Editor_texto.texto = trata_texto(Editor_texto.texto,tecla)      #  .    ??
+    Editor_texto.texto = trata_texto(Editor_texto.texto,tecla)
     return Editor_texto
 
 

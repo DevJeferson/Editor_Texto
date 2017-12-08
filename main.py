@@ -2,7 +2,6 @@ from funcoes_editor_texto import *
 "====================================================BIG-BANG=========================================================="
 '''EstadoMundo: Texto -> Texto
 '''
-
 def main(texto):
     big_bang(texto, \
              tela=TELA, \
@@ -10,4 +9,4 @@ def main(texto):
              quando_tecla=trata_editor_texto, \
              )
 
-main(EDITOR_TEXTO_INICIAL)     
+main(EDITOR_TEXTO_INICIAL)
